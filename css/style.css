@@ -1,0 +1,44 @@
+.div-tooltip {
+  opacity: 0;
+  width: 230px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  margin: 20px;
+  z-index: 99999;
+  border-radius: 3px;
+  border: #eaeaea;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+
+.bullet {
+  font-size: 0.8em;
+  font-family: sans-serif;
+}
+
+.test {
+  position: relative;
+  background-color: pink;
+}
+.Dict {
+  margin-top: 12px;
+  margin-left: -15px;
+  width: 110%;
+  text-align: center;
+  letter-spacing: 1px;
+  display: block;
+  background-color: #ffffff;
+  display: block;
+  font-family: sans-serif;
+}
+
+.Dict:hover {
+  color: white;
+  background-color: #fab1a0;
+  border-radius: 30px;
+}
