@@ -154,11 +154,13 @@ let displayTooltip = async function(e, obj) {
   console.log(`${txt}`);
 
   //background.js 로 보내는 메세지
-  chrome.runtime.sendMessage({ word: txt }, function(response) {
+  /* chrome.runtime.sendMessage({ word: txt }, function(response) {
     console.log(response);
     console.log("Hola2");
-  });
-
+  }); */
+  const item = await fetchTest(txt);
+  console.log("!! item", item);
+  console.log("!! item.result", item.result);
   //   definition = await getDefinition(txt, definition);
   //   definition = chrome.runtime.sendMessage({ contentScriptQuery: "voca" });
   console.log("out");
@@ -243,3 +245,19 @@ function init() {
 document.addEventListener("DOMContentLoaded", function() {
   init();
 });
+
+async function fetchTest(text) {
+  return await sendMessage({
+    contentScriptQuery: "queryTest",
+    word: text
+  });
+}
+function sendMessage(data) {
+  return new Promise(function(resolve, reject) {
+    chrome.runtime.sendMessage(data, res => {
+      console.log("result：", res);
+
+      resolve(res);
+    });
+  });
+}
